@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* 番茄弹窗 */
+#pomodoro {
+    position: absolute;
+    width: 125%;
+    height: 100%;
+
+    background-color: #cecece7e;
+    z-index: 999;
+    display: none;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+#box0,
+#box00{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    font-weight: 800;
+}
+
+
+#cp-done,
+#cp-cancel,
+#cp-number {
+    display: none;
+
+    margin: 5px;
+    border: none;
+    text-align: center;
+    outline: none;
+}
+
+#cp-number {
+    width: 50px;
+    height: 30px;
+    background: none;
+
+}
+
+
+/* 计时区 */
+#clock {
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    left: 0;
+    background-color: #F17C67;
+}
+
+#timer {
+    position: absolute;
+    background-color: none;
+    width: 805px;
+    height: 190px;
+    top: 35%;
+    left: calc((100% - 805px)/2);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#timer span {
+    font-size: 180px;
+    font-weight: bold;
+    color: #434343;
+}
+
+#button-box {
+    position: absolute;
+    background-color: none;
+    width: 300px;
+    height: 115px;
+    bottom: 5%;
+    left: calc((100% - 230px)/2);
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border: 0px solid rgb(112, 112, 112);
+    color: rgb(112, 112, 112);
+    /* background-color: #F17C67; */
+    border-radius: 40px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 40px;
+    background: #F17C67;
+    box-shadow: inset 4px 4px 8px #bc6150,
+        inset -4px -4px 8px #ff977e;
+}
+
+
+/* 任务区 */
+#todos {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    right: 0;
+    /* background-color: #F17C67; */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px;
+    background: #55b9f3;
+    box-shadow: inset 5px 5px 10px #4290be,
+        inset -5px -5px 10px #68e2ff;
+
+}
+
+#example {
+    display: none;
+}
+
+.todo {
+    position: relative;
+    background-color: #55b9f3;
+    margin: 5px;
+    height: 60px;
+
+}
+
+.todo [type=checkbox] {
+    position: absolute;
+    visibility: hidden;
+}
+
+label {
+    width: 30px;
+    height: 30px;
+}
+
+label::before {
+    content: '\a0';
+    display: inline-block;
+    border: 2px solid rgb(112, 112, 112);
+    text-align: center;
+    margin: 15px;
+    width: 26px;
+    height: 26px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked+label::before {
+    content: '\2713';
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    color: rgb(112, 112, 112);
+}
+
+.todo button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #55b9f3;
+    box-shadow: inset 5px 5px 10px #4290be,
+        inset -5px -5px 10px #68e2ff;
+    color: rgb(112, 112, 112);
+}
+
+.todo [type=text] {
+    position: relative;
+    margin: 0;
+    width: 200px;
+    height: 28px;
+    top: 0px;
+
+
+    font-size: 20px;
+    color: rgb(64, 64, 64);
+    text-align: center;
+
+    background: none;
+    border-bottom: 2px solid rgb(112, 112, 112);
+
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
